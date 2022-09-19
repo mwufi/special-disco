@@ -1,13 +1,22 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Flex, Heading, useColorModeValue } from "@chakra-ui/react";
 import Link from "next/link";
 
 import ThemeToggle from "./ThemeToggle";
 
 const Header = () => {
+  const backgroundColor = useColorModeValue("white", "rgb(26,32,44)");
   return (
-    <Flex as="header" width="full" align="center" position='sticky' top='4'>
+    <Flex
+      as="header"
+      width="full"
+      align="center"
+      position="sticky"
+      top="0"
+      p="4"
+      background={backgroundColor}
+    >
       <Link href="/">
-        <Heading as="h1" size="lg" as='button'>
+        <Heading as="h1" size="lg" as="button">
           Eve Schools
         </Heading>
       </Link>

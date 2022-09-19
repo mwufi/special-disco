@@ -27,6 +27,10 @@ const Home = () => (
     >
       <SomeText />
     </Flex>
+
+    <Box my="8">
+      <Heading>The Tech</Heading>
+    </Box>
     <Flex
       direction="column"
       alignItems="center"
@@ -34,7 +38,7 @@ const Home = () => (
       minHeight="70vh"
       backgroundImage="https://images.unsplash.com/photo-1537420327992-d6e192287183?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=988&q=80"
       gap={4}
-      mb={64}
+      mb={32}
       p={8}
       w="full"
     >
@@ -60,7 +64,7 @@ const Home = () => (
       minHeight="70vh"
       gap={4}
       backgroundImage="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-      mb={64}
+      mb={32}
       p={8}
       w="full"
     >
@@ -79,6 +83,9 @@ const Home = () => (
         </Text>
       </Grid>
     </Flex>
+    <Box my="8">
+      <Heading>Our Courses</Heading>
+    </Box>
     <Flex
       direction="column"
       alignItems="center"
@@ -88,22 +95,24 @@ const Home = () => (
       backgroundColor="rgba(000,100,200,0.5)"
       backgroundBlendMode="multiply"
       backgroundImage="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2340&q=80"
-      mb={64}
+      mb={32}
       p={8}
       w="full"
     >
       <Grid textAlign="center">
         <Heading lineHeight="tall">
+          Course #1:
+          <br />
           <Highlight
             query="Algorithms"
             styles={{ px: "2", py: "1", rounded: "full", bg: "red.100" }}
           >
-            Course #1: Learn Algorithms with Eve
+            Learn Algorithms with Eve
           </Highlight>
         </Heading>
 
         <Text color="gray.200" fontSize="lg" mt="4">
-          Become a pro at algorithms. Get a software development job today.
+          Become a pro at algorithms
         </Text>
 
         <Text color="gray.200" fontSize="lg" mt="4" fontWeight="bold">
