@@ -4,12 +4,15 @@ specifiers:
   '@babel/core': ^7.19.1
   '@chakra-ui/react': ^2.3.2
   '@chakra-ui/styled-system': ^2.3.1
+  '@chakra-ui/system': 2.2.9
+  '@chakra-ui/toast': ^3.0.10
   '@commitlint/config-conventional': ^17.1.0
   '@commitlint/cz-commitlint': ^17.1.2
   '@emotion/react': ^11.10.4
   '@emotion/styled': ^11.10.4
   '@next/env': '*'
   '@supabase/supabase-js': ^1.35.6
+  '@types/mixpanel-browser': ^2.38.0
   '@types/react': ^18.0.20
   commitizen: ^4.2.5
   commitlint: ^17.1.2
@@ -21,6 +24,7 @@ specifiers:
   husky: ^8.0.1
   inquirer: ^8.2.4
   lint-staged: ^13.0.3
+  mixpanel-browser: ^2.45.0
   next: ^12.3.0
   next-pwa: ^5.6.0
   next-seo: ^5.5.0
@@ -35,10 +39,12 @@ specifiers:
 
 dependencies:
   '@chakra-ui/react': 2.3.2_tnnftml3dsxhbuoyamgi3vcjo4
+  '@chakra-ui/toast': 3.0.10_dqzk2tbhr6jskhujmg7j3zvs6q
   '@emotion/react': 11.10.4_axxkdcpdr7up57umjkldobkynm
   '@emotion/styled': 11.10.4_sn4wuyy54zwps25tv4w7lbiz6i
   '@supabase/supabase-js': 1.35.6
   framer-motion: 7.3.5_biqbaboplfbrettd7655fr4n2y
+  mixpanel-browser: 2.45.0
   next: 12.3.0_ir3quccc6i62x6qn6jjhyjjiey
   next-pwa: 5.6.0_7rqv3maf2j4npfrqtvdyquapky
   next-seo: 5.5.0_c3hne4hwj64hb7tofigd3bvkji
@@ -49,9 +55,11 @@ dependencies:
 devDependencies:
   '@babel/core': 7.19.1
   '@chakra-ui/styled-system': 2.3.1
+  '@chakra-ui/system': 2.2.9_hfzxdiydbrbhhfpkwuv3jhvwmq
   '@commitlint/config-conventional': 17.1.0
   '@commitlint/cz-commitlint': 17.1.2_yes7iyjckc3rubj3ixzwc3ince
   '@next/env': 12.3.0
+  '@types/mixpanel-browser': 2.38.0
   '@types/react': 18.0.20
   commitizen: 4.2.5
   commitlint: 17.1.2
@@ -1351,7 +1359,6 @@ packages:
     dependencies:
       '@chakra-ui/react-use-safe-layout-effect': 2.0.1_react@18.2.0
       react: 18.2.0
-    dev: false
 
   /@chakra-ui/control-box/2.0.9_t3ehvuuqn76q3rgsqchbz6ue7u:
     resolution: {integrity: sha512-/viS9OBah1wCLNZbgfwkoQOnVRUYgp8Gypjqk9QNQwnNdFUTEgWc1RWN+1RYO85esJzHLkA2hZFIrYu1TZeZ6g==}
@@ -1860,7 +1867,6 @@ packages:
       react: '>=18'
     dependencies:
       react: 18.2.0
-    dev: false
 
   /@chakra-ui/react-use-size/2.0.3_react@18.2.0:
     resolution: {integrity: sha512-hr4hKepPUmM2paXseSZiOTK2y+ZqnSzYNusDEB01f+cDerFjdN1jSfNJKXpiKF0+hNESXfOPQb3Zt0eDusRdoA==}
@@ -1895,7 +1901,6 @@ packages:
     dependencies:
       '@chakra-ui/utils': 2.0.9
       react: 18.2.0
-    dev: false
 
   /@chakra-ui/react/2.3.2_tnnftml3dsxhbuoyamgi3vcjo4:
     resolution: {integrity: sha512-qOcDLbA1x4pnpJPtF4YJ7pZzK/ki6SoQl9Vj7fsR+hJw1lt3y1475NSyYGiA6qgho/8twUgYLhcdrTbQPcmOHg==}
@@ -2065,7 +2070,6 @@ packages:
       '@emotion/styled': 11.10.4_sn4wuyy54zwps25tv4w7lbiz6i
       react: 18.2.0
       react-fast-compare: 3.2.0
-    dev: false
 
   /@chakra-ui/table/2.0.9_t3ehvuuqn76q3rgsqchbz6ue7u:
     resolution: {integrity: sha512-XRz6+x4dMeQX3xyViyG2H/P1STI/2vwvgU2cjzzwS+5fZ2JdGaTgYzBb+IZoH9agEq1Ma3rlKMUPDrRCFb7kLQ==}
@@ -2198,7 +2202,6 @@ packages:
       css-box-model: 1.2.1
       framesync: 5.3.0
       lodash.mergewith: 4.6.2
-    dev: false
 
   /@chakra-ui/visually-hidden/2.0.9_t3ehvuuqn76q3rgsqchbz6ue7u:
     resolution: {integrity: sha512-PkNxrRGp9H3bdqEaoo8XGt/AL9UuGRTom0/9XJa+G/Dj8Cy1sDuamOWk3pN/ZQs46RokfK9Uh5LqPY5dwSDweg==}
@@ -3018,11 +3021,9 @@ packages:
     resolution: {integrity: sha512-RY/8IaVENjG19rxTZu9Nukqh0W2UrYgmBj5sdns4hWRZaV8PqR7wIKHFKzvOTjo4zVRV7sVI+yFhAJql12Kfqg==}
     dependencies:
       '@types/lodash': 4.14.185
-    dev: false
 
   /@types/lodash/4.14.185:
     resolution: {integrity: sha512-evMDG1bC4rgQg4ku9tKpuMh5iBNEwNa3tf9zRHdP1qlv+1WUg44xat4IxCE14gIpZRGUUWAx2VhItCZc25NfMA==}
-    dev: false
 
   /@types/minimatch/5.1.2:
     resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
@@ -3030,6 +3031,10 @@ packages:
 
   /@types/minimist/1.2.2:
     resolution: {integrity: sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==}
+    dev: true
+
+  /@types/mixpanel-browser/2.38.0:
+    resolution: {integrity: sha512-TR8rvsILnqXA7oiiGOxuMGXwvDeCoQDonXJB5UR+TYvEAFpiK8ReFj5LhZT+Xhm3NpI9aPoju30jB2ssorSUww==}
     dev: true
 
   /@types/node/14.18.29:
@@ -4163,7 +4168,6 @@ packages:
     resolution: {integrity: sha512-a7Vr4Q/kd/aw96bnJG332W9V9LkJO69JRcaCYDUqjp6/z0w6VcZjgAcTbgFxEPfBgdnAwlh3iwu+hLopa+flJw==}
     dependencies:
       tiny-invariant: 1.2.0
-    dev: false
 
   /csstype/3.1.1:
     resolution: {integrity: sha512-DJR/VvkAvSZW9bTouZue2sSxDwdTN92uHjqeKVm+0dAqdfNykRzQ95tay8aXMBAAPpUiq4Qcug2L7neoRh2Egw==}
@@ -5150,7 +5154,6 @@ packages:
     resolution: {integrity: sha512-oc5m68HDO/tuK2blj7ZcdEBRx3p1PjrgHazL8GYEpvULhrtGIFbQArN6cQS2QhW8mitffaB+VYzMjDqBxxQeoA==}
     dependencies:
       tslib: 2.4.0
-    dev: false
 
   /framesync/6.1.2:
     resolution: {integrity: sha512-jBTqhX6KaQVDyus8muwZbBeGGP0XgujBRbQ7gM7BRdS3CadCZIHiawyzYLnafYcvZIh5j8WE7cxZKFn7dXhu9g==}
@@ -6176,6 +6179,10 @@ packages:
     resolution: {integrity: sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==}
     dev: true
 
+  /mixpanel-browser/2.45.0:
+    resolution: {integrity: sha512-PQ1DaTk68yyYtLA0iejmzPA9iNDhT4uIZpqZjRTw7HWpYfl123fydHb2laKanaKjm8YDmrGGz3+xZ4Q6joogyg==}
+    dev: false
+
   /modify-values/1.0.1:
     resolution: {integrity: sha512-xV2bxeN6F7oYjZWTe/YPAy6MN2M+sL4u/Rlm2AHCIVGfo2p1yGmBHQ6vHehl4bRTZBdHu3TSkWdYgkwpYzAGSw==}
     engines: {node: '>=0.10.0'}
@@ -6747,7 +6754,6 @@ packages:
 
   /react-fast-compare/3.2.0:
     resolution: {integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==}
-    dev: false
 
   /react-focus-lock/2.9.1_w5j4k42lgipnm43s3brx6h3c34:
     resolution: {integrity: sha512-pSWOQrUmiKLkffPO6BpMXN7SNKXMsuOakl652IBuALAu1esk+IcpJyM+ALcYzPTTFz1rD0R54aB9A4HuP5t1Wg==}
@@ -7535,7 +7541,6 @@ packages:
 
   /tiny-invariant/1.2.0:
     resolution: {integrity: sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==}
-    dev: false
 
   /tmp/0.0.33:
     resolution: {integrity: sha512-jRCJlojKnZ3addtTOjdIqoRuPEKBvNXcGYqzO6zWZX8KfKEpnGY5jfggJQ3EjKuu8D4bJRr0y+cYJFmYbImXGw==}

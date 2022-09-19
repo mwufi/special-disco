@@ -6,13 +6,94 @@ import {
   Text,
   Highlight,
   Input,
+  useToast,
 } from "@chakra-ui/react";
 import { NextSeo } from "next-seo";
-
-import CTASection from "lib/components/samples/CTASection";
-import SomeImage from "lib/components/samples/SomeImage";
+import mixpanel from "mixpanel-browser";
 import SomeText from "lib/components/samples/SomeText";
+import { useState } from "react";
 
+const SignupForm = () => {
+  let [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+
+  const toast = useToast();
+  const id = "email-toast";
+
+  function isValidEmail(email: string) {
+    return /\S+@\S+\.\S+/.test(email);
+  }
+
+  const showToast = () => {
+    if (error !== "" && error !== null) {
+      toast({
+        title: "Email typo?",
+        description: "Please double check.",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+    } else if (email.length < 2) {
+      toast({
+        title: "Email typo?",
+        description: "Must be longer than 2",
+        status: "error",
+        duration: 9000,
+        isClosable: true,
+      });
+    } else if (!toast.isActive(id)) {
+      toast({
+        title: `Awesome!`,
+        description: `We'll send you an email when we launch.`,
+        status: "success",
+        duration: 9000,
+        isClosable: true,
+      });
+      mixpanel.track("Email submitted", { email });
+    }
+  };
+
+  const handleChange = (event) => {
+    if (!isValidEmail(event.target.value)) {
+      setError("Email is invalid");
+    } else {
+      setError(null);
+    }
+
+    setEmail(event.target.value);
+  };
+
+  return (
+    <Flex my={12} gap="8">
+      <Heading flexGrow="1">
+        Sign up for <br />
+        updates
+      </Heading>
+      <Box>
+        <form
+          onSubmit={(e) => {
+            showToast();
+            e.preventDefault();
+          }}
+        >
+          <Input
+            id="email"
+            type={"text"}
+            value={email}
+            onChange={handleChange}
+            placeholder={"me@gmail.com"}
+            rounded={"full"}
+            border={0}
+            mb="2"
+          />
+          <Input type="submit" as="button">
+            Yes, I'm excited!
+          </Input>
+        </form>
+      </Box>
+    </Flex>
+  );
+};
 const Home = () => (
   <>
     <NextSeo title="Home" />
@@ -118,15 +199,7 @@ const Home = () => (
         </Text>
       </Grid>
     </Flex>
-    <Flex my={12}>
-      <Heading>Sign up for updates</Heading>
-      <Input
-        type={"text"}
-        placeholder={"me@gmail.com"}
-        rounded={"full"}
-        border={0}
-      />
-    </Flex>
+    <SignupForm />
   </>
 );
 

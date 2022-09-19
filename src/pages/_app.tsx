@@ -8,6 +8,9 @@ import { Chakra } from "lib/components/Chakra";
 import Layout from "lib/layout";
 import "lib/styles/globals.css";
 
+import mixpanel from 'mixpanel-browser';
+mixpanel.init('e9e92c539ce199d1d23755ad0b86f31e', {debug: false}); 
+
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
     <Chakra>
