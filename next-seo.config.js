@@ -1,24 +1,18 @@
 /** @type {import('next-seo').DefaultSeoProps} */
 const defaultSEOConfig = {
-  title: "nextarter-chakra",
-  titleTemplate: "%s | nextarter-chakra",
-  defaultTitle: "nextarter-chakra",
-  description: "Next.js + chakra-ui + TypeScript template",
-  canonical: "https://nextarter-chakra.sznm.dev",
+  title: "Eve Schools",
+  titleTemplate: "Eve Schools | %s",
+  defaultTitle: "Eve Schools",
+  description: "Learn anything, faster",
+  canonical: "https://eveschools.com",
   openGraph: {
-    url: "https://nextarter-chakra.sznm.dev",
-    title: "nextarter-chakra",
-    description: "Next.js + chakra-ui + TypeScript template",
-    images: [
-      {
-        url: "https://og-image.sznm.dev/**nextarter-chakra**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250",
-        alt: "nextarter-chakra.sznm.dev og-image",
-      },
-    ],
-    site_name: "nextarter-chakra",
+    url: "https://eveschools.com",
+    title: "Eve Schools",
+    description: "Learn anything, faster",
+    site_name: "Eve Schools",
   },
   twitter: {
-    handle: "@sozonome",
+    handle: "@eveschools",
     cardType: "summary_large_image",
   },
 };

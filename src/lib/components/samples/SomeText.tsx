@@ -1,14 +1,19 @@
-import { Grid, Heading, Text } from "@chakra-ui/react";
+import { Grid, Heading, Highlight, Text } from "@chakra-ui/react";
 
 const SomeText = () => {
   return (
     <Grid textAlign="center">
-      <Heading as="h1" size="lg">
-        nextarter-chakra
+      <Heading lineHeight="tall">
+        <Highlight
+          query="learn"
+          styles={{ px: "2", py: "1", rounded: "full", bg: "red.100" }}
+        >
+          What if AI could help you learn faster?
+        </Highlight>
       </Heading>
 
-      <Text fontSize="xs" color="gray.500">
-        This is a Next.js app with Chakra-UI and TypeScript setup.
+      <Text color="gray.500" fontSize='lg' mt='4'>
+        We're a startup creating custom courses and an AI assistant.
       </Text>
     </Grid>
   );
