@@ -16,7 +16,7 @@ const Header = () => {
       background={backgroundColor}
     >
       <Link href="/">
-        <Heading as="h1" size="lg" as="button">
+        <Heading size="lg" as="button">
           Eve Schools
         </Heading>
       </Link>
