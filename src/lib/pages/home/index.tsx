@@ -11,9 +11,13 @@ import {
 import { NextSeo } from "next-seo";
 import mixpanel from "mixpanel-browser";
 import SomeText from "lib/components/samples/SomeText";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const SignupForm = () => {
+  // fire an event when viewed
+  useEffect(() => {
+    mixpanel.track("Page view");
+  }, []);
   let [email, setEmail] = useState("");
   const [error, setError] = useState("");
 
