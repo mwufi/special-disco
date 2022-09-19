@@ -43,7 +43,7 @@ const Home = () => (
       w="full"
     >
       <Grid textAlign="center">
-        <Heading lineHeight="tall">
+        <Heading lineHeight="tall" color="white">
           <Highlight
             query="learn"
             styles={{ px: "2", py: "1", rounded: "full", bg: "red.100" }}
@@ -51,7 +51,6 @@ const Home = () => (
             The Eve knowledge graph
           </Highlight>
         </Heading>
-
         <Text color="gray.200" fontSize="lg" mt="4">
           All the power of a textbook, in bite-sized segments
         </Text>
@@ -69,7 +68,7 @@ const Home = () => (
       w="full"
     >
       <Grid textAlign="center">
-        <Heading lineHeight="tall">
+        <Heading lineHeight="tall" color="white">
           <Highlight
             query="learn"
             styles={{ px: "2", py: "1", rounded: "full", bg: "red.100" }}
@@ -77,7 +76,6 @@ const Home = () => (
             Eve Companion
           </Highlight>
         </Heading>
-
         <Text color="gray.200" fontSize="lg" mt="4">
           Tutor, guide, forum - all in one. App in your pocket.
         </Text>
@@ -100,7 +98,7 @@ const Home = () => (
       w="full"
     >
       <Grid textAlign="center">
-        <Heading lineHeight="tall">
+        <Heading lineHeight="tall" color="white">
           Course #1:
           <br />
           <Highlight
