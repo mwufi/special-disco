@@ -57,10 +57,12 @@ const SignupForm = () => {
     }
   };
 
+  // @ts-ignore
   const handleChange = (event) => {
     if (!isValidEmail(event.target.value)) {
       setError("Email is invalid");
     } else {
+      // @ts-ignore
       setError(null);
     }
 
